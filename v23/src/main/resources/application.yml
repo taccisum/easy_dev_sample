@@ -1,0 +1,8 @@
+easy-dev:
+  web:
+    swagger:
+      title: easy dev sample docs
+      global-operation-parameters:
+        token:
+          parameter-type: header
+          description: authentication token
