@@ -18,6 +18,7 @@ public class SwaggerEnhanceController {
     @GetMapping("echo_token")
     @GenericResponse("echo token")
     public String echoToken(HttpServletRequest request) {
+        // 配置easy-dev.web.swagger.global-operation-parameters
         String token = request.getHeader("token");
         if (StringUtils.isBlank(token)) {
             return "empty token";
