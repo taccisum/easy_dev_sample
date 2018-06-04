@@ -20,7 +20,7 @@ public enum OSSType implements KeyCarrier {
 
     @Override
     public String key() {
-        return name();
+        return key;
     }
 
     interface Name {
