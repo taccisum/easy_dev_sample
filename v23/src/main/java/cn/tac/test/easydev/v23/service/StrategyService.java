@@ -1,8 +1,7 @@
 package cn.tac.test.easydev.v23.service;
 
-import cn.tac.framework.easydev.core.domain.strategy.StrategyFactory;
-import cn.tac.test.easydev.v23.feature.strategy.OSSStrategy;
 import cn.tac.test.easydev.v23.feature.strategy.OSSType;
+import cn.tac.test.easydev.v23.feature.strategy.StrategyFactoryFacade;
 import org.springframework.stereotype.Service;
 
 /**
@@ -12,6 +11,6 @@ import org.springframework.stereotype.Service;
 @Service
 public class StrategyService {
     public String upload(OSSType type) {
-        return StrategyFactory.get(OSSStrategy.class, type).upload();
+        return StrategyFactoryFacade.getOSSStrategy(type).upload();
     }
 }
