@@ -1,3 +1,24 @@
+spring:
+  h2:
+    console:
+      path: /h2-console
+      enabled: true
+      settings:
+        web-allow-others: true
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:sample;MODE=MYSQL
+    username: sa
+    password: sa
+    schema:
+      - classpath:sql/h2/schema/foo.sql
+    data:
+      - classpath:sql/h2/data/foo.sql
+
+  output:
+    ansi:
+      enabled: always
+
 easy-dev:
   web:
     swagger:
@@ -6,3 +27,10 @@ easy-dev:
         token:
           parameter-type: header
           description: authentication token
+
+mybatis:
+  configuration:
+      map-underscore-to-camel-case: true
+      default-fetch-size: 100
+      default-statement-timeout: 30
+  mapper-locations: classpath*:mapper/*.xml
