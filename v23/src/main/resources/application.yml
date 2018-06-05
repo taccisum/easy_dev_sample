@@ -27,6 +27,8 @@ easy-dev:
         token:
           parameter-type: header
           description: authentication token
+    exception-handler:
+      output-stack-trace: true
 
 mybatis:
   configuration:
